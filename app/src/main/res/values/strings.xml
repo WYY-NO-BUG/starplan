@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">StarPlan</string>
+    <string name="phone">请输入手机号</string>
 </resources>

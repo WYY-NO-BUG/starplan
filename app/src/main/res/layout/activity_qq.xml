@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -41,7 +42,7 @@
                 android:padding="10dp"
                 android:text="账号"
                 android:textColor="#000000"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/edit_num"
@@ -49,8 +50,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:background="@null"
-                android:hint="请输入手机号"
-                android:padding="10dp" />
+                android:hint="@string/phone"
+                android:padding="10dp"
+                android:layout_marginStart="5dp" />
 
         </LinearLayout>
 
@@ -72,16 +74,17 @@
                 android:padding="10dp"
                 android:text="密码"
                 android:textColor="#000000"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/edit_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
                 android:background="@null"
                 android:hint="请输入验证码"
-                android:padding="10dp" />
+                android:padding="10dp"
+                tools:ignore="RtlCompat" />
 
         </LinearLayout>
 
@@ -94,7 +97,7 @@
         android:background="@drawable/account_button_used"
         android:text="登录"
         android:textColor="#FFFFFF"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 
         </RelativeLayout>
 
@@ -103,9 +106,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:orientation="horizontal"
-        android:layout_below="@+id/login"
-        android:layout_centerHorizontal="true">
+        android:orientation="horizontal">
 
 
         <Button
@@ -115,7 +116,7 @@
             android:background="#FFFFFF"
             android:text="密码登陆"
             android:textColor="#676062"
-            android:textSize="12dp" />
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/textView2"
@@ -130,7 +131,7 @@
             android:layout_height="wrap_content"
             android:text="账号注册"
             android:background="#FFFFFF"
-            android:textSize="12dp"
+            android:textSize="12sp"
             android:textColor="#676062"/>
     </LinearLayout>
 
@@ -144,10 +145,9 @@
             android:id="@+id/box"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/choose"
             android:layout_gravity="center_horizontal"
             android:text="已阅读并同意"
-            android:textSize="12dp"
+            android:textSize="12sp"
             android:textColor="#0B0B0A" />
 
         <TextView
@@ -157,7 +157,7 @@
             android:layout_gravity="center"
             android:text="《用户协议》"
             android:textColor="#1894F3"
-            android:textSize="12dp" />
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/text2"
@@ -166,7 +166,7 @@
             android:layout_gravity="center"
             android:text="和"
             android:textColor="#0B0B0A"
-            android:textSize="12dp" />
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/text3"
@@ -175,7 +175,7 @@
             android:layout_gravity="center"
             android:text="《隐私协议》"
             android:textColor="#1894F3"
-            android:textSize="12dp" />
+            android:textSize="12sp" />
 
     </LinearLayout>
 
