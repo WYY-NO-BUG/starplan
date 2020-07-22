@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".yueying.YYActivity"></activity>
+        <activity android:name=".mine"></activity>
+        <activity android:name=".learn" />
+        <activity android:name=".listen" />
+        <activity android:name=".watch" />
+        <activity android:name=".yueying.YYActivity" />
         <activity android:name=".wangxin.WXActivity" />
         <activity android:name=".ruiguang.RGActivity" />
         <activity android:name=".MainActivity">
