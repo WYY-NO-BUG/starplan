@@ -7,8 +7,26 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-    <style name="MyTabLayoutTextAppearance" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">    <item name="android:textSize">5sp</item>
-        <item name="android:textColor">@color/colorAccent</item>
+
+   <style name="MyTablayoutstyle" parent = "Base.Widget.Design.TabLayout">
+       <item name="tabBackground">@color/white</item>
+       <item name="tabIndicatorColor">@color/orange</item>
+       <item name="tabIndicatorHeight">0dp</item>
+       <item name="android:textSize">5sp</item>
+       <item name="android:textColor">@color/gray</item>
+   </style>
+
+    <style name="MyTablayoutstyle_two" parent = "Base.Widget.Design.TabLayout">
+        <item name="tabBackground">@color/white</item>
+        <item name="tabIndicatorColor">@color/orange</item>
+        <item name="tabIndicatorHeight">5dp</item>
+        <item name="android:textSize">5sp</item>
+        <item name="android:textColor">@color/black</item>
+
     </style>
 
+    <color name="white">#FFFFFF</color>
+    <color name="orange">#FF9800</color>
+    <color name="black">#000000</color>
+    <color name="gray">#BDBCBC</color>
 </resources>
