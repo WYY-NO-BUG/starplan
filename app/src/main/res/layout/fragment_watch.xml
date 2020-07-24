@@ -8,8 +8,7 @@
         android:id="@+id/tl_wt"
         style="@style/MyTablayoutstyle_two"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#33eeeeee"/>
+        android:layout_height="wrap_content" />
 
 
     <androidx.viewpager.widget.ViewPager
@@ -17,7 +16,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/tl_wt"
-        android:layout_weight="1"
-        android:background="#333333"/>
+        android:layout_weight="1" />
 
 </RelativeLayout>

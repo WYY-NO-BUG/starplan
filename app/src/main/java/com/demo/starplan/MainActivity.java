@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
     private void initViews() {
         //绑定viewpager和Fragment
         viewPager = findViewById(R.id.viewpager);
-        myFragmentPagerAdapter = new MyFragmentPagerAdapter(getSupportFragmentManager(), this);
-        viewPager.setAdapter(myFragmentPagerAdapter);
+//        myFragmentPagerAdapter = new MyFragmentPagerAdapter(getSupportFragmentManager(), this);
+//        viewPager.setAdapter(myFragmentPagerAdapter);
 
         //绑定tablayout与viewpager
         tabLayout = findViewById(R.id.tablayout);
