@@ -9,12 +9,14 @@
     <ImageView
         android:id="@+id/iv_choose1"
         android:layout_width="50dp"
-        android:layout_height="50dp"/>
+        android:layout_height="50dp"
+        android:background="@drawable/iv_app_select"/>
 
     <TextView
         android:id="@+id/tv_choose1"
         android:layout_width="50dp"
-        android:layout_height="20dp" />
+        android:layout_height="20dp"
+        android:text="宝宝巴士"/>
 
 
 </LinearLayout>
