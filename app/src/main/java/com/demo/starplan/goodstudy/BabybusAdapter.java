@@ -15,7 +15,7 @@ import com.demo.starplan.R;
 import java.util.List;
 
 public class BabybusAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    private List<BabyBusBean> mBabybusList;
+    private List<babybus> mBabybusList;
     private static final int VIEW_TYPE_ONE = 1;
     private static final int VIEW_TYPE_TWO = 2;
     private static final int VIEW_TYPE_THREE = 3;
@@ -24,7 +24,7 @@ public class BabybusAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     private Context mContext;
     private LayoutInflater inflater;
 
-    public BabybusAdapter(List<BabyBusBean> mBabybusList, Context context) {
+    public BabybusAdapter(List<babybus> mBabybusList, Context context) {
         this.mBabybusList = mBabybusList;
         mContext = context;
         inflater = LayoutInflater.from(mContext);
@@ -32,7 +32,7 @@ public class BabybusAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     @Override
     public int getItemViewType(int position) {
-        return mBabybusList.get(position).getData().;
+        return mBabybusList.get(position).type;
     }
 
     @NonNull
@@ -59,7 +59,7 @@ public class BabybusAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        BabyBusBean bbb = mBabybusList.get(position);
+        babybus bbb = mBabybusList.get(position);
         switch (getItemViewType(position)) {
             case babybus.TypeOne:
                 ((ViewHolderOne) holder).icon1.setImageResource(bbb.getImageId());

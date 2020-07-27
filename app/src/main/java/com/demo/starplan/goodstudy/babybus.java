@@ -1,6 +1,7 @@
 package com.demo.starplan.goodstudy;
 
 public class babybus {
+
     private String title;
     private int imageId;
     public static final int TypeOne = 1;
