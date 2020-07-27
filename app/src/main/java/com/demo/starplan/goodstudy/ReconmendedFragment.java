@@ -65,13 +65,25 @@ public class ReconmendedFragment extends Fragment {
 
         babybus one = new babybus("儿歌", R.drawable.iv_cartoon_normal,1);
         babybusList.add(one);
-        babybus t = new babybus("推荐", R.drawable.iv_cartoon_normal,4);
+        babybus a = new babybus("吃饭", R.drawable.iv_cartoon_normal,2);
+        babybusList.add(a);
+        babybus s = new babybus("哄睡", R.drawable.iv_cartoon_normal,2);
+        babybusList.add(s);
+        babybus d = new babybus("奇妙课堂", R.drawable.iv_cartoon_normal,2);
+        babybusList.add(d);
+        babybus f = new babybus("绘本故事", R.drawable.iv_cartoon_normal,2);
+        babybusList.add(f);
+        babybus g = new babybus("VIP会员", R.drawable.iv_cartoon_normal,2);
+        babybusList.add(g);
+        babybus h = new babybus("儿歌精选", R.drawable.iv_cartoon_normal,3);
+        babybusList.add(h);
+        babybus t = new babybus("经点儿歌100首", R.drawable.iv_cartoon_normal,4);
         babybusList.add(t);
-        babybus q = new babybus("儿歌", R.drawable.iv_cartoon_normal,4);
+        babybus q = new babybus("流行童谣", R.drawable.iv_cartoon_normal,4);
         babybusList.add(q);
-        babybus w = new babybus("儿歌", R.drawable.iv_cartoon_normal,4);
+        babybus w = new babybus("蜜蜜一家", R.drawable.iv_cartoon_normal,4);
         babybusList.add(w);
-        babybus e = new babybus("儿歌", R.drawable.iv_cartoon_normal,4);
+        babybus e = new babybus("疯狂怪兽车", R.drawable.iv_cartoon_normal,4);
         babybusList.add(e);
 
     }

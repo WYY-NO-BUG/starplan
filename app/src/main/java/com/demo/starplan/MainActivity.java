@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             tabLayout.getTabAt(i).setCustomView(myFragmentPagerAdapter.getTabView(i));
         }*/
 
-        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 switch (tab.getPosition()) {
