@@ -1,21 +1,34 @@
 package com.demo.starplan;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.AttributeSet;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.tabs.TabLayout;
+
+import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
 
     private TabLayout tabLayout;
-    private ViewPager viewPager;
+    private NoScrollViewPager viewPager;
     private MyFragmentPagerAdapter myFragmentPagerAdapter;
     private int[] pics = new int[]{R.drawable.iv_cartoon_normal, R.drawable.iv_app_normal,
             R.drawable.iv_listen_normal, R.drawable.iv_mine_normal,};
+
+    private ImageView historyPlay;
 
 
     @Override
@@ -23,10 +36,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        historyPlay = findViewById(R.id.iv_history);
+        historyPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,HistoryActivity.class);
+                startActivity(intent);
+            }
+        });
+
         //初始化视图
         initViews();
 
+
     }
+
+
 
     private void initViews() {
         //绑定viewpager和Fragment

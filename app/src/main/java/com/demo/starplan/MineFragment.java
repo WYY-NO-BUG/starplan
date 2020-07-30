@@ -19,7 +19,7 @@ public class MineFragment extends Fragment {
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_mine, container, false);
-        button = view.findViewById(R.id.button2);
+        button = view.findViewById(R.id.mine_login);
 
         return view;
     }
@@ -30,10 +30,11 @@ public class MineFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            Intent intent = new Intent(getActivity(), LoginFragment.class);
+            Intent intent = new Intent(getActivity(), LoginActivity.class);
             startActivity(intent);
-            getActivity().finish();
             }
         });
+
+
     }
 }

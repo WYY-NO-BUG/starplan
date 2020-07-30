@@ -9,15 +9,19 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.demo.starplan.R;
+import com.demo.starplan.httpdemo.ReturnImg;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -38,6 +42,8 @@ import okhttp3.Response;
 public class ReconmendedFragment extends Fragment {
     private View view;
     private List<babybus> babybusList;
+    private BabyBusBean babyBusBean;
+    private RecyclerView recyclerView;
 
     @Nullable
     @Override
@@ -56,8 +62,9 @@ public class ReconmendedFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         sendRequestWithOkHttp();
-        initApp();
-        RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
+
+        recyclerView = view.findViewById(R.id.recycler_view);
+
 //        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
 //        recyclerView.setLayoutManager(layoutManager);
         GridLayoutManager layoutManager = new GridLayoutManager(getContext(), 10);
@@ -79,8 +86,7 @@ public class ReconmendedFragment extends Fragment {
             }
         });
         recyclerView.setLayoutManager(layoutManager);
-        BabybusAdapter adapter = new BabybusAdapter(babybusList, getContext());
-        recyclerView.setAdapter(adapter);
+
     }
 
     private void sendRequestWithOkHttp() {
@@ -96,7 +102,7 @@ public class ReconmendedFragment extends Fragment {
                 try {
                     Response response = client.newCall(request).execute();
                     String responseData = response.body().string();
-
+                    parseJSONWith(responseData);
 
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -123,39 +129,41 @@ public class ReconmendedFragment extends Fragment {
     }
 
     private void parseJSONWith(String jsonDate) {
-//        Gson gson = new Gson();
-//        List<BabyBusBean> babyBusBeanList = gson.fromJson(jsonDate,
-//                    new TypeToken<List<BabyBusBean>>(){}.getType());
-//        for (BabyBusBean bbb: babyBusBeanList
-//             ) {
-//            babybusList.add(bbb);
-//        }
+        Gson gson = new Gson();
+        babyBusBean = gson.fromJson(jsonDate, BabyBusBean.class);
+        try {
+            initApp();
+            new Handler(Looper.getMainLooper()).post(new Runnable() {
+                @Override
+                public void run() {
+                    BabybusAdapter adapter = new BabybusAdapter(babybusList, getContext());
+                    recyclerView.setAdapter(adapter);
+                }
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void initApp() {
+    public void initApp() throws IOException {
         babybusList = new ArrayList<>();
-        babybus one = new babybus("儿歌", R.drawable.iv_cartoon_normal, 1);
-        babybusList.add(one);
-        babybus a = new babybus("吃饭", R.drawable.iv_cartoon_normal, 2);
-        babybusList.add(a);
-        babybus s = new babybus("哄睡", R.drawable.iv_cartoon_normal, 2);
-        babybusList.add(s);
-        babybus d = new babybus("奇妙课堂", R.drawable.iv_cartoon_normal, 2);
-        babybusList.add(d);
-        babybus f = new babybus("绘本故事", R.drawable.iv_cartoon_normal, 2);
-        babybusList.add(f);
-        babybus g = new babybus("VIP会员", R.drawable.iv_cartoon_normal, 2);
-        babybusList.add(g);
-        babybus h = new babybus("儿歌精选", R.drawable.iv_cartoon_normal, 3);
-        babybusList.add(h);
-        babybus t = new babybus("经点儿歌100首", R.drawable.iv_cartoon_normal, 4);
-        babybusList.add(t);
-        babybus q = new babybus("流行童谣", R.drawable.iv_cartoon_normal, 4);
-        babybusList.add(q);
-        babybus w = new babybus("蜜蜜一家", R.drawable.iv_cartoon_normal, 4);
-        babybusList.add(w);
-        babybus e = new babybus("疯狂怪兽车", R.drawable.iv_cartoon_normal, 4);
-        babybusList.add(e);
+        for (BabyBusBean.DataBean.RecommendListBean BDR : babyBusBean.getData().getRecommendList()) {
+
+            babybusList.add(new babybus(BDR.getSerialInfo(), BDR.getImg(),1));
+            break;
+        }
+        for (BabyBusBean.DataBean.SubjectListBean BDR : babyBusBean.getData().getSubjectList()){
+            babybusList.add(new babybus(BDR.getName(), BDR.getImg(),2));
+        }
+        for (BabyBusBean.DataBean.EliteListBean BDR : babyBusBean.getData().getEliteList()){
+            babybusList.add(new babybus(BDR.getName(), BDR.getImg(),3));
+        }
+        for (BabyBusBean.DataBean.EliteListBean.ListBean BDR : babyBusBean.getData().getEliteList().get(0).getList()){
+            babybus bbb = new babybus(BDR.getName(), BDR.getImg(),4);
+            bbb.setDesc(BDR.getDesc());
+            babybusList.add(bbb);
+        }
+
 
     }
 }

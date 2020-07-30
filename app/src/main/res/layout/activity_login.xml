@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#FFFFFF">
+    android:background="#FFFFFF"
+    android:orientation="vertical">
 
 
     <ImageView
@@ -13,18 +13,30 @@
         android:layout_width="match_parent"
         android:layout_height="265dp"
         android:scaleType="centerCrop"
-        android:src= "@drawable/account_login_background_top" />
+        android:src="@drawable/account_login_background_top" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="15dp"
+        android:text="登陆"
+        android:textColor="#E6EBEC"
+        android:textSize="20sp" />
+
 
     <RelativeLayout
-        android:id="@+id/imageView"
+        android:id="@+id/layout1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:layout_marginTop="230dp">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="280dp"
             android:scaleType="centerInside"
-            android:src= "@drawable/account_login_box" />
+            android:src="@drawable/account_login_box" />
 
         <LinearLayout
             android:id="@+id/num"
@@ -48,13 +60,13 @@
                 android:id="@+id/edit_num"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@null"
-                android:hint="@string/phone"
-                android:padding="10dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginLeft="5dp"
+                android:background="@null"
+                android:hint="@string/phone"
                 android:inputType="phone"
-                android:maxLength="11"/>
+                android:maxLength="11"
+                android:padding="10dp" />
 
         </LinearLayout>
 
@@ -83,20 +95,20 @@
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
                 android:background="@null"
                 android:hint="请输入验证码"
-                android:padding="10dp"
-                android:layout_marginLeft="5dp"
+                android:inputType="number"
                 android:maxLength="6"
-                android:inputType="number" />
+                android:padding="10dp" />
 
             <TextView
                 android:id="@+id/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
-                android:textColor="#1894F3"
-                android:text="获取验证码" />
+                android:text="获取验证码"
+                android:textColor="#1894F3" />
 
         </LinearLayout>
 
@@ -117,12 +129,13 @@
         android:id="@+id/choose"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_below="@+id/layout1"
+        android:layout_centerInParent="true">
 
 
         <TextView
-            android:id="@+id/button3"
+            android:id="@+id/textView3"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:background="#FFFFFF"
@@ -134,25 +147,27 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="#FFFFFF"
             android:text="|"
-            android:textColor="#676062"
-            android:background="#FFFFFF"/>
+            android:textColor="#676062" />
 
         <TextView
             android:id="@+id/button4"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:text="账号注册"
             android:background="#FFFFFF"
-            android:textSize="12sp"
-            android:textColor="#676062"/>
+            android:text="账号注册"
+            android:textColor="#676062"
+            android:textSize="12sp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:orientation="horizontal"
-        android:layout_gravity="center">
+        android:layout_below="@id/choose"
+        android:layout_centerInParent="true">
 
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/box"
@@ -160,8 +175,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="已阅读并同意"
-            android:textSize="12sp"
-            android:textColor="#0B0B0A" />
+            android:textColor="#0B0B0A"
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/text1"
@@ -193,6 +208,4 @@
     </LinearLayout>
 
 
-
-
-</LinearLayout>
+</RelativeLayout>

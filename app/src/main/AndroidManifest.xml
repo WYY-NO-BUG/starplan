@@ -5,21 +5,22 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name="org.litepal.LitePalApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".httpdemo.HttpActivity">
-
-        </activity>
+        <activity android:name=".HistoryActivity"></activity>
+        <activity android:name=".ActivityLoginPaeeword" />
+        <activity android:name=".httpdemo.HttpActivity"></activity>
         <activity android:name=".goodstudy.ReconmendedFragment" />
         <activity android:name=".goodstudy.SongFragment" />
         <activity android:name=".goodstudy.MusicFragment" />
         <activity android:name=".goodstudy.EnlightenmentFragment" />
         <activity android:name=".goodstudy.CartoonFragment" />
-        <activity android:name=".LoginFragment" />
+        <activity android:name=".LoginActivity" />
         <activity android:name=".MineFragment" />
         <activity android:name=".LearnFragment" />
         <activity android:name=".ListenFragment" />
