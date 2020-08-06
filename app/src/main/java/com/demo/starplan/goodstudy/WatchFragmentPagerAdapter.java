@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.demo.starplan.recommend.RecommendedFragment;
+
 
 public class WatchFragmentPagerAdapter extends FragmentPagerAdapter {
 
@@ -27,7 +29,7 @@ public class WatchFragmentPagerAdapter extends FragmentPagerAdapter {
         } else  if (position == 4) {
             return new EnlightenmentFragment();
         }
-        return new ReconmendedFragment();
+        return new RecommendedFragment();
     }
 
     @Override

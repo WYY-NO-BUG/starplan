@@ -1,40 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.demo.starplan">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name="org.litepal.LitePalApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".HistoryActivity"></activity>
-        <activity android:name=".ActivityLoginPaeeword" />
-        <activity android:name=".httpdemo.HttpActivity"></activity>
-        <activity android:name=".goodstudy.ReconmendedFragment" />
-        <activity android:name=".goodstudy.SongFragment" />
-        <activity android:name=".goodstudy.MusicFragment" />
-        <activity android:name=".goodstudy.EnlightenmentFragment" />
-        <activity android:name=".goodstudy.CartoonFragment" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".MineFragment" />
-        <activity android:name=".LearnFragment" />
-        <activity android:name=".ListenFragment" />
-        <activity android:name=".WatchFragment" />
-        <activity android:name=".yueying.YYActivity" />
-        <activity android:name=".wangxin.WXActivity" />
-        <activity android:name=".ruiguang.RGActivity" />
-        <activity android:name=".MainActivity">
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".SplashActvity"
+            android:theme="@style/AppTheme.NoTitle_FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".mediaplay.MediaActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoTitle_FullScreen"
+            tools:ignore="LockedOrientationActivity" />
+        <activity android:name=".history.HistoryActivity" />
+        <activity android:name=".login.ActivityLoginPassword" />
+        <activity android:name=".httpdemo.HttpActivity" />
+        <activity android:name=".goodstudy.SongFragment" />
+        <activity android:name=".goodstudy.MusicFragment" />
+        <activity android:name=".goodstudy.EnlightenmentFragment" />
+        <activity android:name=".goodstudy.CartoonFragment" />
+        <activity android:name=".login.LoginActivity" />
+        <activity android:name=".home.MineFragment" />
+        <activity android:name=".home.LearnFragment" />
+        <activity android:name=".home.ListenFragment" />
+        <activity android:name=".home.WatchFragment" />
+        <activity android:name=".yueying.YYActivity" />
+        <activity android:name=".wangxin.WXActivity" />
+        <activity android:name=".ruiguang.RGActivity" />
+        <activity android:name=".home.MainActivity"></activity>
     </application>
 
 </manifest>
