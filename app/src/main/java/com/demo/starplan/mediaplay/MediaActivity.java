@@ -165,9 +165,9 @@ public class MediaActivity extends BaseMvpActivity<MediaPresenter> implements Me
                     title.setText(historyVideo.get(0).getName());
                     setVideo(historyVideo.get(0).getUrlVideo());
                 } else {
-                    title.setText(videoBeanList.get(3).getName());
-                    setVideo(videoBeanList.get(3).getVideoUrl());
-                    mPresenter.addHistory(videoBeanList.get(3));
+                    title.setText(videoBeanList.get(0).getName());
+                    setVideo(videoBeanList.get(0).getVideoUrl());
+                    mPresenter.addHistory(videoBeanList.get(0));
                 }
 
                 adapter.setOnItemClickListener(new OnItemClickListener() {
@@ -364,21 +364,21 @@ public class MediaActivity extends BaseMvpActivity<MediaPresenter> implements Me
      * 当activity销毁时，停止视频
      * 释放视频资源，
      */
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        if (!mMediaPlayer.isPlaying()) {
-            mMediaPlayer.start();
-        }
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        if (mMediaPlayer.isPlaying()) {
-            mMediaPlayer.pause();
-        }
-    }
+//    @Override
+//    protected void onRestart() {
+//        super.onRestart();
+//        if (!mMediaPlayer.isPlaying()) {
+//            mMediaPlayer.start();
+//        }
+//    }
+//
+//    @Override
+//    protected void onStop() {
+//        super.onStop();
+//        if (mMediaPlayer.isPlaying()) {
+//            mMediaPlayer.pause();
+//        }
+//    }
 
     @Override
     public void onDestroy() {

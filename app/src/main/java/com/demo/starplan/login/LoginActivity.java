@@ -23,7 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.fragment_mine);
         loginButton = findViewById(R.id.login);
         textView = findViewById(R.id.edit_num);
         textView3 = findViewById(R.id.textView3);

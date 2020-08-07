@@ -114,6 +114,7 @@ public class BabybusAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             case Babybus.TypeTwo:
                 Glide.with(mContext)
                         .load(bbb.getUrlImg())
+                        .apply(new RequestOptions().placeholder(R.drawable.photo_22))
                         .into(((ViewHolderTwo) holder).babybusImage);
                 ((ViewHolderTwo) holder).babybusTitle.setText(bbb.getName());
                 ((ViewHolderTwo) holder).babybusView.setOnClickListener(this);
@@ -131,6 +132,7 @@ public class BabybusAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 ((ViewHolderFour) holder).babybusTitle.setText(bbb.getName());
                 Glide.with(mContext)
                         .load(bbb.getUrlImg())
+                        .apply(new RequestOptions().placeholder(R.drawable.photo_42))
                         .apply(options)
                         .into(((ViewHolderFour) holder).babybusImage);
                 ((ViewHolderFour) holder).babybusView.setOnClickListener(this);
